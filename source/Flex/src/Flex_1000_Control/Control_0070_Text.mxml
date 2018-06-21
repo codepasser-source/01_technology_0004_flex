@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600">
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:Label x="26" y="36" text="用户名：" width="61" height="15" id="nameLabel" fontSize="14" fontFamily="Arial" fontWeight="bold" color="#BB0202"/>
+	<s:TextInput x="92" y="33" id="nameInput"/>
+	<s:Label x="228" y="33" text="密码：" color="#AC0606" width="53" height="22" fontSize="14" id="pwLabel"/>
+	<s:TextInput x="271" y="33" id="passwordInput" displayAsPassword="true"/>
+	
+	<s:TextArea x="22" y="72" editable="true" id="textArea" text="i love xr" width="222" height="50"/>
+	
+	
+	<mx:Text text="i love xr" x="28" y="130" width="216" height="59" id="text" enabled="true">
+	</mx:Text>
+	<mx:Image x="28" y="197" width="171" height="155" source="../../bin-debug/image/photo.png" scaleContent="false"/>
+	<mx:ColorPicker x="269" y="125" width="91" height="43"/>
+	
+	<mx:DateField x="269" y="185" width="143" formatString="YYYY-MM-DD"/>
+	
+	
+	<mx:DateChooser x="269" y="228" />
+	
+	<s:HScrollBar x="475" y="72" width="164" height="17"/>
+	
+	
+	<s:HSlider x="475" y="111" width="164" />
+	<s:NumericStepper x="475" y="166" width="164" height="23" />
+	
+	<mx:ProgressBar x="475" y="242" />
+	<s:RichEditableText x="479" y="315" text="RichEditableText"/>
+	
+	
+</s:Application>

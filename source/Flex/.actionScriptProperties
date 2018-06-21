@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<actionScriptProperties analytics="false" mainApplicationPath="Flex_1100_Layout/Layout_0010_HVbox.mxml" projectUUID="4e811cfe-9827-433c-92f3-a884fe059396" version="6">
+  <compiler additionalCompilerArguments="-locale zh_CN" autoRSLOrdering="true" copyDependentFiles="true" fteInMXComponents="false" generateAccessible="true" htmlExpressInstall="true" htmlGenerate="true" htmlHistoryManagement="true" htmlPlayerVersionCheck="true" includeNetmonSwc="false" outputFolderPath="bin-debug" sourceFolderPath="src" strict="true" targetPlayerVersion="0.0.0" useApolloConfig="false" useDebugRSLSwfs="true" verifyDigests="true" warn="true">
+    <compilerSourcePath/>
+    <libraryPath defaultLinkType="0">
+      <libraryPathEntry kind="4" path="">
+        <excludedEntries>
+          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/flex.swc" useDefaultLinkType="false"/>
+        </excludedEntries>
+      </libraryPathEntry>
+      <libraryPathEntry kind="1" linkType="1" path="libs"/>
+    </libraryPath>
+    <sourceAttachmentPath/>
+  </compiler>
+  <applications>
+    <application path="Flex_0900_Event/Event_0100_Event/Flex_1000_Event.mxml"/>
+    <application path="Flex_1300_Navigator/Navigator__0010_TabNavigator.mxml"/>
+    <application path="Flex_1000_Control/Control_0040_DataGrid.mxml"/>
+    <application path="Flex_0000_HelloWorld/HelloWorld.mxml"/>
+    <application path="Flex_1000_Control/Control_0070_Text.mxml"/>
+    <application path="Flex_1000_Control/Control_0060_Repeater.mxml"/>
+    <application path="Flex_0800_Exception/ExceptionTest.mxml"/>
+    <application path="Flex_1000_Control/Control_0020_Button.mxml"/>
+    <application path="Flex_0400_Flow/Flow.mxml"/>
+    <application path="Flex_1400_myComponent/MyComponentView.mxml"/>
+    <application path="Flex_0300_DataFiled/DataFiled.mxml"/>
+    <application path="Flex_1000_Control/Control_0030_Combox.mxml"/>
+    <application path="Flex_0900_Event/Event_0300_ASEvent/Flex_1060_ASEvent.mxml"/>
+    <application path="Flex_1500_Communication/Flex_2000_HTTPService.mxml"/>
+    <application path="Flex_1000_Control/Control_0010_Alert.mxml"/>
+    <application path="Flex_1000_Control/Control_0050_List.mxml"/>
+    <application path="Flex_0200_Operator/Operator.mxml"/>
+    <application path="Flex_1300_Navigator/Navigator_0020_ViewStack.mxml"/>
+    <application path="Flex_1100_Layout/Layout_0010_HVbox.mxml"/>
+    <application path="Flex_0600_String/StringTest.mxml"/>
+    <application path="Flex_0700_Array/ArrayTest.mxml"/>
+    <application path="Flex_0500_OO/OO.mxml"/>
+    <application path="Flex_0900_Event/Event_0200_MXMLEvent/Flex_1050_MXMLEvent.mxml"/>
+  </applications>
+  <modules/>
+  <buildCSSFiles/>
+</actionScriptProperties>

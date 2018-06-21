@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600">
+
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import mx.events.CloseEvent;
+			protected function btn1_clickHandler(event:MouseEvent):void
+			{
+				Alert.show("提示信息","提示");
+			}
+
+			protected function btn2_clickHandler(event:MouseEvent):void
+			{
+				Alert.show("你确定这样做么？","提示",1|2,this,winCloseHandler);
+			}
+
+			private function winCloseHandler(event:CloseEvent):void{
+			   Alert.show(event.detail.toString(),"当前选择");
+			}
+
+			protected function btn3_clickHandler(event:MouseEvent):void
+			{
+				Alert.yesLabel="yes";
+				Alert.noLabel="no";
+				Alert.cancelLabel="cancel";
+				Alert.show("你确定这样做么？","提示",1|2|8,this,winCloseHandler); 
+			}
+
+		]]>
+	</fx:Script>
+
+	 
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:Button x="79" y="71" id="btn1" label="显示提示alert" width="135" height="46" click="btn1_clickHandler(event)"> 
+	</s:Button>
+	<s:Button x="79" y="131" label="显示对话alert" width="135" height="52" id="btn2" click="btn2_clickHandler(event)"/>
+	<s:Button x="79" y="201" label="动态改变alert label" width="135" height="60" id="btn3" click="btn3_clickHandler(event)"/>
+</s:Application>

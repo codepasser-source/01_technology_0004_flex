@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600"
+			   creationComplete="application1_creationCompleteHandler(event)"
+			   >
+	<s:layout>
+		<s:BasicLayout/>
+	</s:layout>
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.events.FlexEvent;
+
+			protected function application1_creationCompleteHandler(event:FlexEvent):void
+			{
+				var dgData : ArrayCollection = new ArrayCollection(); 
+				dgData.addItem({id:1,count:"17821",address:'北京'});
+				dgData.addItem({id:2,count:"17821",address:'上海'});
+				dgData.addItem({id:3,count:"17821",address:'天津'});
+				dgData.addItem({id:4,count:"17821",address:'大连'});
+			 
+				perDg.dataProvider = dgData; //设置数据
+				
+			}
+
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<mx:DataGrid x="77" y="48" width="347" height="206" id="perDg">  <!--dataProvider="{dgData}"-->
+		<mx:columns>
+			<mx:DataGridColumn headerText="ID" dataField="id"/> //设置列属性、数据解析
+			<mx:DataGridColumn headerText="人口" dataField="count"/>
+			<mx:DataGridColumn headerText="城市" dataField="address"/>
+		</mx:columns>
+	</mx:DataGrid>
+</s:Application>

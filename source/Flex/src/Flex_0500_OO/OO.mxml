@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600"
+			   creationComplete="application_creationCompleteHandler(event)"
+			   >
+	<fx:Script>
+		<![CDATA[
+			import Flex_0500_OO.interfaces.IFlyInterFace;
+			import Flex_0500_OO.interfaces.impl.MyFly;
+			
+			import mx.controls.Alert;
+			import mx.events.FlexEvent;
+
+			protected function application_creationCompleteHandler(event:FlexEvent):void
+			{
+			//面向对象 普通类
+				var student:Student = new Student();
+				//设置属性值 调用 set
+				student.id = 100;
+				student.name = "tom";
+				student.age=24;
+				//获取值 调用  get
+				Alert.show("id:"+student.id+" name:"+student.name+" age:"+student.age);
+				
+			//动态类  dynamic class
+				var teacher : Teacher = new Teacher();
+				
+				teacher.askQuestion = function(...params):void{
+				  Alert.show("Do you love XR ？","问题",4)
+				}
+					
+				teacher.askQuestion(1,2,3);	
+				delete teacher.askQuestion;//动态删除 函数
+				
+				//teacher.askQuestion(1,2,3);	//再次调用时 是无效的
+				
+				var myFly : IFlyInterFace = new MyFly();//多肽
+				
+				myFly.fiy();
+			}
+
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+</s:Application>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600"
+			   creationComplete="application1_creationCompleteHandler(event)"
+			   >
+	<s:layout>
+		<s:VerticalLayout horizontalAlign="center" verticalAlign="middle"/>
+	</s:layout>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.events.FlexEvent;
+			
+			protected function application1_creationCompleteHandler(event:FlexEvent):void
+			{
+				[Bandable]
+				var listData : ArrayCollection = new ArrayCollection(); 
+				listData.addItem({id:1,address:'北京'});
+				listData.addItem({id:2,address:'上海'});
+				listData.addItem({id:3,address:'天津'});
+				listData.addItem({id:4,address:'大连'}); 
+				rp.dataProvider = listData;
+			}
+			
+		]]>
+	</fx:Script>
+	<mx:VBox  >
+		<mx:Repeater id="rp" width="326" height="300">
+			<mx:Button label="{rp.currentItem.address}"> </mx:Button>
+		</mx:Repeater> 
+	</mx:VBox>
+	
+</s:Application>

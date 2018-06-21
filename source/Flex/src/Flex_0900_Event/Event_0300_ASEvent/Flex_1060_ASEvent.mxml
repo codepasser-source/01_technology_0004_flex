@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600"
+			   creationComplete="application_creationCompleteHandler()"
+			   >
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[ 
+			
+			import mx.controls.Alert;
+			import mx.events.FlexEvent;
+			
+			protected function application_creationCompleteHandler():void
+			{
+				this.addEventListener(MyEvent.MYEVENT,myEvent_listenterHandler);//设置监听器
+			}
+			
+			protected function myBtn_clickHandler():void
+			{
+				 var myevent:MyEvent = new MyEvent(MyEvent.MYEVENT,1);
+				 dispatchEvent(myevent); //派发事件
+			}
+
+            protected function myEvent_listenterHandler(event:MyEvent):void
+			{
+			      
+				Alert.show("AS Event 自定义事件"+event.eventObj,"Event",4);
+			} 
+		]]>
+	</fx:Script>
+	<s:Button x="73" y="56" label="AS 自定义事件" width="204" height="70" id="myBtn"  click="myBtn_clickHandler()"/>
+	
+</s:Application>

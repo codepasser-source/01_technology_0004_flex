@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600">
+	<s:layout>
+		<s:BasicLayout/>
+	</s:layout>
+
+	<fx:Script>
+		<![CDATA[ 
+			import mx.controls.Alert;
+
+		 
+
+
+			protected function btn_clickHandler(event:MouseEvent):void
+			{
+				Alert.show(music.selected.toString(),"提示");
+			}
+
+		]]>
+	</fx:Script>
+
+	<fx:Declarations>
+		<s:RadioButtonGroup id="radiogroup1"/>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:Button x="67" y="67" label="按钮" id="btn"   click="btn_clickHandler(event)"/>
+	<mx:LinkButton x="59" y="116" label="LinkButton" id="lbtn" />
+	
+	<s:CheckBox x="63" y="170" label="体育"  selected="true" id="sports" />
+	<s:CheckBox x="162" y="170" label="音乐" id="music" />
+	
+	<s:RadioButton x="60" y="219" label="男" groupName="radiogroup1" id="man" selected="true"/>
+	<s:RadioButton x="60" y="245" label="女" groupName="radiogroup1" id="weman"/>
+	
+	
+</s:Application>

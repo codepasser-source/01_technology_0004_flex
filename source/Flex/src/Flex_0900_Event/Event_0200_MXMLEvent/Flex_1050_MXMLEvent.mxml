@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600"
+			   creationComplete="application_creationCompleteHandler()"
+			   >
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import mx.events.FlexEvent;
+
+			//第一步： 设置 自定义事件监听器，监听自定义事件触发
+			protected function application_creationCompleteHandler():void
+			{
+				this.addEventListener("myClick",myClick_listenterHandler);//注册 自定义事件获取监听器 【监听类型，执行方法】
+			}
+
+
+			//第二部：组册点击事件，创建自定义类型事件对象，触发事件，传递事件对象
+			protected function myBtn_clickHandler():void
+			{
+				var myEvent:Event = new Event("myClick");
+				dispatchEvent(myEvent); //传递事件
+			}
+			
+			//第三步：编写自定义事件捕获时处理方法
+			protected function myClick_listenterHandler(event:Event):void{ //注意： 必须对应一个Event参数
+			  Alert.show("MXML Event 自定义事件","Event",4)
+			}
+
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<fx:Metadata>
+		[Event(name="myClick",type="flash.events.Event")]
+	</fx:Metadata>
+	<s:Button x="113" y="92" label="按钮" id="myBtn" click="myBtn_clickHandler()"/>
+</s:Application>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600"
+			   creationComplete="application1_creationCompleteHandler(event)">
+	<s:layout>
+		<s:BasicLayout/>
+	</s:layout>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.controls.Alert;
+			import mx.events.FlexEvent;
+			
+			import spark.events.IndexChangeEvent;
+			
+			
+
+			protected function application1_creationCompleteHandler(event:FlexEvent):void
+			{
+				var cbData : ArrayCollection = new ArrayCollection(); 
+				cbData.addItem({id:0,label:"请选择"});//必须指定label属性，combobox才能解析
+				cbData.addItem({id:1,label:'北京'});
+				cbData.addItem({id:2,label:'上海'});
+				cbData.addItem({id:3,label:'天津'});
+				cbData.addItem({id:4,label:'大连'});
+				address.dataProvider = cbData;
+				address.selectedIndex=0;
+			}
+
+
+			protected function address_changeHandler(event:IndexChangeEvent):void
+			{
+				trace(event.newIndex.toString()+" of new index");
+				trace(event.oldIndex.toString()+" of old index");
+			}
+
+		]]>
+	</fx:Script>
+	<s:ComboBox x="48" y="40" id="address"   change="address_changeHandler(event)"/>
+</s:Application>

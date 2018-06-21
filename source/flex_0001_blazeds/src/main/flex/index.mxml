@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+				xmlns:mx="library://ns.adobe.com/flex/mx"
+				minWidth="955"
+				minHeight="600"
+				layout="absolute">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<mx:RemoteObject id="sayService"
+						 destination="SayService"
+						 fault="onFault(event);">
+			<mx:method name="sayHello"
+					   result="onResult(event)"/>
+		</mx:RemoteObject>
+	</fx:Declarations>
+	<mx:HBox>
+		<mx:TextInput id="userName"
+					  width="200"
+					  height="25">
+		</mx:TextInput>
+		<mx:Button label="使用传统方式实现RemoteObject调用"
+				   click="btn_onXmlRemoteCall(event)">
+		</mx:Button>
+		<mx:Button label="通过封装实现实现RemoteObject调用"
+				   click="btn_onReflexRemoteCall(event)">
+		</mx:Button>
+	</mx:HBox>
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import mx.rpc.events.FaultEvent;
+			import mx.rpc.events.ResultEvent;
+			
+			import service.RemoteService;
+			import service.SayService;
+
+			public function btn_onXmlRemoteCall(event:Event):void
+			{
+				sayService.sayHello(userName.text);
+			}
+
+			public function onResult(event:ResultEvent):void
+			{
+				Alert.show(event.result.toString(), "结果");
+			}
+
+			public function onFault(event:FaultEvent):void
+			{
+				Alert.show(event.message.body.toString(), "失败");
+			}
+
+			public function btn_onReflexRemoteCall(event:Event):void
+			{
+				var sayCall:SayService = new SayService();
+				sayCall.sayHello(userName.text,onResult);
+			}
+		]]>
+	</fx:Script>
+</mx:Application>

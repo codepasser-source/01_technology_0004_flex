@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexProperties 
+	enableServiceManager="false" 
+	flexServerFeatures="4"
+	flexServerType="2"
+	serverContextRoot="/flex_0001_blazeds"
+	serverRoot="/flex_0001_blazeds"
+	serverRootURL="http://localhost"
+	toolCompile="true"
+	useServerFlexSDK="false"
+	version="2"/>

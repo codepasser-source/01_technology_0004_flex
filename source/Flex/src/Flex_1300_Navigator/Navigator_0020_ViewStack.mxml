@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600">
+	<s:layout>
+		<s:BasicLayout/>
+	</s:layout>
+	<fx:Style source="Navigator_0200_ViewStack.css"/>
+
+	<fx:Script>
+		<![CDATA[
+			protected function button1_clickHandler():void
+			{
+				// TODO Auto-generated method stub
+				viewstack1.selectedIndex = 1;
+			}
+			
+			protected function button2_clickHandler():void
+			{
+				// TODO Auto-generated method stub
+				viewstack1.selectedIndex = 0;
+			}
+		]]>
+	</fx:Script>
+
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<mx:ViewStack x="45" y="21" id="viewstack1" selectedIndex="0" width="293" height="360">
+		<s:NavigatorContent id="view1" label="视图 1" width="100%" height="100%">
+			<s:Button click="button1_clickHandler()" label="切换视图2">
+				
+			</s:Button>
+		</s:NavigatorContent>
+		<s:NavigatorContent id="view2" label="视图 2" width="100%" height="100%">
+			<s:Button click="button2_clickHandler()" label="切换视图1">
+				
+			</s:Button>
+		</s:NavigatorContent>
+	</mx:ViewStack>
+</s:Application>

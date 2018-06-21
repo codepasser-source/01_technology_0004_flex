@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600"
+			   creationComplete="application1_creationCompleteHandler(event)"
+			   >
+	<s:layout>
+		<s:BasicLayout/>
+	</s:layout>
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.events.FlexEvent;
+
+			protected function application1_creationCompleteHandler(event:FlexEvent):void
+			{
+				var listData : ArrayCollection = new ArrayCollection(); 
+				listData.addItem({id:1,label:'北京'});
+				listData.addItem({id:2,label:'上海'});
+				listData.addItem({id:3,label:'天津'});
+				listData.addItem({id:4,label:'大连'}); 
+				addList.dataProvider = listData;
+			}
+
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:List x="91" y="68" width="454" height="232" id="addList" >
+	</s:List>
+</s:Application>
